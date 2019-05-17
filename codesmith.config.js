@@ -11,7 +11,7 @@ function notEmpty(name) {
 }
 
 module.exports = function (codesmith) {
-    codesmith, setGenerator('component', {
+    codesmith.setGenerator('component', {
         description: 'generate a component',
         questions: [{
             type: 'input',
@@ -53,46 +53,20 @@ module.exports = function (codesmith) {
             }
         }
         ],
-        actions: [
-            data => {
-                const name = '{{name}}'
-                const actions = [{
-                    type: 'add',
-                    path: `{{basePath}}/${name}/index.vue`,
-                    templateFile: 'generators/component/component.vue',
-                    data: {
-                        name: name,
-                        template: data.blocks.includes('template'),
-                        script: data.blocks.includes('script'),
-                        style: data.blocks.includes('style')
-                    }
-                }]
-                return actions
-            }, 
-        ]
-    });
-    codesmith.setGenerator('functional-component-ts', {
-        description: 'Add a new functional component(ts)',
-        questions: [
-            {
-                type: 'directory',
-                name: 'basePath',
-                message: 'Where you like to put this component?',
-                basePath: ".",
-            },
-            {
-                type: 'input',
-                name: 'name',
-                message: "What's your component class name?"
-            }
-        ],
-        actions: [
-            {
+        actions: (data) => {
+            const name = '{{name}}'
+            const actions = [{
                 type: 'add',
-                path: '{{basePath}}/{{dashCase name}}.tsx',
-                templateFile: 'generators/functional-component-ts/templates/component.tsx',
-                abortOnFail: true
-            }
-        ]
+                path: `{{basePath}}/${name}/index.vue`,
+                templateFile: 'generators/component/component.vue',
+                data: {
+                    name: name,
+                    template: data.blocks.includes('template'),
+                    script: data.blocks.includes('script'),
+                    style: data.blocks.includes('style')
+                }
+            }]
+            return actions
+        }, 
     });
 };

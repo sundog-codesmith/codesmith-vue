@@ -1,6 +1,6 @@
 {
-  "name": "@codestore/react",
-  "version": "1.0.5",
+  "name": "@codestore/vue",
+  "version": "1.0.2",
   "description": "",
   "main": "codesmith.config.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sundog-codesmith/codesmith-react.git"
+    "url": "git+https://github.com/sundog-codesmith/codesmith-vue.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/sundog-codesmith/codesmith-react/issues"
+    "url": "https://github.com/sundog-codesmith/codesmith-vue/issues"
   },
-  "homepage": "https://github.com/sundog-codesmith/codesmith-react#readme",
+  "homepage": "https://github.com/sundog-codesmith/codesmith-vue#readme",
   "license": "ISC"
 }
