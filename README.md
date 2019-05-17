@@ -1,3 +1,5 @@
+This Package is used by [Codesmith](https://github.com/sundogee/codesmith) for generate code stuff
+
 # Usage
 1. (optional) Install the codesmith globally
 ```Shell
